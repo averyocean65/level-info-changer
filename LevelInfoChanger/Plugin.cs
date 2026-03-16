@@ -1,5 +1,6 @@
 using System;
 using BepInEx;
+using UnityEngine.SceneManagement;
 
 namespace MyMod {
 	[BepInPlugin(PluginInfo.GUID, PluginInfo.NAME, PluginInfo.VERSION)]
@@ -10,6 +11,17 @@ namespace MyMod {
 			public const string VERSION = "1.0.0";
 		}
 
-		private void Start() { }
+		private void Start() {
+			string layerName = "TEST /// FIRST";
+			string levelName = "ME";
+			SceneManager.sceneLoaded += (scene, mode) => {
+				LevelNamePopup activator = FindObjectOfType<LevelNamePopup>();
+				if (!activator) {
+					return;
+				}
+				
+				// somehow change levelString and nameString, even though they're private properties...
+			};
+		}
 	}
 }
