@@ -1,3 +1,4 @@
+using System;
 using BepInEx;
 
 namespace MyMod {
@@ -9,8 +10,6 @@ namespace MyMod {
 			public const string VERSION = "1.0.0";
 		}
 
-		private void Start() {
-			Logger.LogInfo("Hello, World!");
-		}
+		private void Start() { }
 	}
 }
